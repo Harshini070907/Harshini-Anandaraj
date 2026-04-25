@@ -4,20 +4,28 @@
     <title>Result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+    <div class="container">
+        <h1>Evaluation Result</h1>
 
-<div class="container">
-    <h1>Evaluation Result</h1>
+        <div class="result-box">
+            <p><strong>Question:</strong> {{ question }}</p>
 
-    <h3>Question:</h3>
-    <p>{{ question }}</p>
+            <p><strong>Classification:</strong></p>
 
-    <h3>Classification:</h3>
-    <p><strong>{{ result }}</strong></p>
+            <span class="badge 
+                {% if 'Easy' in result %}easy
+                {% elif 'Medium' in result %}medium
+                {% elif 'Hard' in result %}hard
+                {% endif %}
+            ">
+                {{ result }}
+            </span>
+        </div>
 
-    <br>
-    <a href="/">Back</a>
-</div>
-
+        <br>
+        <a href="/">⬅ Back</a>
+    </div>
 </body>
 </html>
