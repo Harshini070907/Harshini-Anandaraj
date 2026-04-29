@@ -6,11 +6,20 @@
 <div class="container">
     <h1>Question Evaluator</h1>
 
-    <form method="POST">
-        <textarea name="question" placeholder="Type your question here..."></textarea>
-        <br>
-        <button type="submit">Evaluate</button>
-    </form>
+    <form method="POST" enctype="multipart/form-data">
+
+    <h3>Upload File</h3>
+    <input type="file" name="file">
+
+    <p style="margin: 10px;">OR</p>
+
+    <h3>Type Questions</h3>
+    <textarea name="question" rows="5" placeholder="Enter multiple questions..."></textarea>
+
+    <br><br>
+    <button type="submit">Evaluate</button>
+
+</form>
 </div>
 
 </body>

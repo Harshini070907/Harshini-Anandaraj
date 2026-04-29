@@ -1,31 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+<div class="grid-container">
 
-<body>
-    <div class="container">
-        <h1>Evaluation Result</h1>
-
-        <div class="result-box">
-            <p><strong>Question:</strong> {{ question }}</p>
-
-            <p><strong>Classification:</strong></p>
-
-            <span class="badge 
-                {% if 'Easy' in result %}easy
-                {% elif 'Medium' in result %}medium
-                {% elif 'Hard' in result %}hard
-                {% endif %}
-            ">
-                {{ result }}
-            </span>
-        </div>
-
-        <br>
-        <a href="/">⬅ Back</a>
+    <!-- EASY -->
+    <div class="category-box">
+        <h2>Easy <span class="badge easy"></span></h2>
+        <ul>
+            {% for q in result["Easy"] %}
+                <li>{{ q }}</li>
+            {% endfor %}
+        </ul>
     </div>
-</body>
-</html>
+
+    <!-- MEDIUM -->
+    <div class="category-box">
+        <h2><span class="badge medium">Medium</span></h2>
+        <ul>
+            {% for q in result["Medium"] %}
+                <li>{{ q }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- HARD -->
+    <div class="category-box">
+        <h2><span class="badge hard">Hard</span></h2>
+        <ul>
+            {% for q in result["Hard"] %}
+                <li>{{ q }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>

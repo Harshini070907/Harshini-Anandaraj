@@ -8,19 +8,27 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        question = request.form["question"]
 
-        if not question.strip():
-            return "Please enter a question"
+        file = request.files.get("file")
 
-        result = classify_question(question)
+        # 📂 FILE UPLOAD
+        if file and file.filename.endswith(".docx"):
+            file.save("uploaded.docx")
+            questions = read_docx("uploaded.docx")
+            result = classify_questions_list(questions)
 
-        return render_template("result.html",
-                               question=question,
-                               result=result)
+            return render_template("result.html", result=result)
+
+        # ✍️ TEXT INPUT
+        text = request.form.get("question")
+
+        if text:
+            questions = text.split("\n")
+            result = classify_questions_list(questions)
+
+            return render_template("result.html", data=result)
 
     return render_template("index.html")
-
 def read_docx(file_path):
     doc = Document(file_path)
     questions = []
