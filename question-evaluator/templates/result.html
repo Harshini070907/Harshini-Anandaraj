@@ -1,33 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 <div class="grid-container">
 
-    <!-- EASY -->
-    <div class="category-box">
-        <h2><span class="badge easy">Easy</span></h2>
+ <div class="category-box">
+    <div class="box-header">
+        <span class="badge easy">Easy</span>
+    </div>
+
+    <div class="box-content">
         <ul>
             {% for q in result["Easy"] %}
                 <li>{{ q }}</li>
             {% endfor %}
         </ul>
     </div>
+</div>
 
-    <!-- MEDIUM -->
-    <div class="category-box">
-        <h2><span class="badge medium">Medium</span></h2>
+
+
+
+ <div class="category-box">
+    <div class="box-header">
+        <span class="badge easy">Medium</span>
+    </div>
+
+    <div class="box-content">
         <ul>
             {% for q in result["Medium"] %}
                 <li>{{ q }}</li>
             {% endfor %}
         </ul>
     </div>
+</div>
 
-    <!-- HARD -->
-    <div class="category-box">
-        <h2><span class="badge hard">Hard</span></h2>
+
+
+
+
+ <div class="category-box">
+    <div class="box-header">
+        <span class="badge easy">Hard</span>
+    </div>
+
+    <div class="box-content">
         <ul>
             {% for q in result["Hard"] %}
                 <li>{{ q }}</li>
             {% endfor %}
         </ul>
     </div>
+</div>
 
 </div>

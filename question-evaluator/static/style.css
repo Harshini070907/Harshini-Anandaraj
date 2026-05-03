@@ -1,200 +1,317 @@
-/* Background */
+/* ===== BODY (CENTER EVERYTHING) ===== */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #667eea, #764ba2);
     margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ===== GRID LAYOUT ===== */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    padding: 40px;
+}
+
+/* ===== CATEGORY BOX ===== */
+.category-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    height: 500px;
+    overflow-y: auto;
+}
+
+/* ===== SCROLLBAR (nice look) ===== */
+.category-box::-webkit-scrollbar {
+    width: 6px;
+}
+.category-box::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* ===== TITLE ===== */
+.category-box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* ===== LIST ===== */
+.category-box ul {
+    padding-left: 20px;
+}
+
+.category-box li {
+    margin-bottom: 8px;
+    color: white;
+}
+
+/* ===== BADGE ===== */
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+/* ===== COLORS ===== */
+.easy {
+    background: #28a745;
+    box-shadow: 0 0 10px #28a745;
+}
+
+.medium {
+    background: #ffc107;
+    color: black;
+    box-shadow: 0 0 10px #ffc107;
+}
+
+.hard {
+     background: #dc3545;
+    box-shadow: 0 0 10px #dc3545;
+}
+
+/* CENTER THE PAGE */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* MAIN BOX */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 500px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 500px;
+    color: white;
+}
+
+/* ===== BONUS STYLE ===== */
+h1 {
+    text-align: center;
+    color: white;
+}
+
+label, p, h3 {
+    color: white;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* ===== INPUT & BUTTON STYLING ===== */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* HEADER (FIXED) */
+.box-header {
+    text-align: center;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* SCROLL AREA ONLY */
+.box-content {
+    height: 400px;
+    overflow-y: auto;
+}
+
+/* ===== GLOW ANIMATION ===== */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.3); }
+    50% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    100% { box-shadow: 0 0 5px rgba(255,255,255,0.3); }
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* APPLY TO BADGE */
+.badge {
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+
+    animation: glow 2s infinite ease-in-out,
+               float 3s infinite ease-in-out;
+}
+
+/* CENTER WHOLE PAGE */
+.main-container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Glass container */
-.container {
-    width: 500px;
-    padding: 40px;
-    border-radius: 15px;
+/* MAIN CARD */
+.card {
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+
     text-align: center;
     color: white;
 }
 
-/* Title */
-h1 {
+/* TITLE */
+.card h1 {
     margin-bottom: 20px;
 }
 
-h2 {
-    color: white;
-    margin-bottom: 10px;
+/* SECTION SPACING */
+.section {
+    margin-bottom: 15px;
 }
 
-li {
-    color: white;
-    margin: 5px 0;
-    text-align: left;
-}
-
-/* Textarea */
+/* TEXTAREA */
 textarea {
     width: 100%;
-    height: 120px;
-    padding: 12px;
+    padding: 10px;
     border-radius: 10px;
     border: none;
     outline: none;
-    font-size: 15px;
-    margin-bottom: 20px;
 }
 
-/* Button */
+/* BUTTON */
 button {
-    background: #ffffff;
-    color: #764ba2;
+    margin-top: 15px;
+    padding: 10px 20px;
     border: none;
-    padding: 12px 25px;
-    font-size: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
+
+    background: #ffffff;
+    color: black;
+    font-weight: bold;
     cursor: pointer;
+
     transition: 0.3s;
 }
 
 button:hover {
-    background: #f0f0f0;
     transform: scale(1.05);
 }
 
-/* Result box */
-.result-box {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
+/* OR TEXT */
+.divider {
+    margin: 10px 0;
+    opacity: 0.8;
 }
 
-.result-box h2 {
-    background: rgba(255,255,255,0.2);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/* Result badge */
-.badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* Colors for difficulty */
-.easy {
-    background: #4CAF50;
-}
-
-.medium {
-    background: #FFC107;
-    color: black;
-}
-
-.hard {
-    background: #F44336;
-}
-
-/* Back link */
-a {
-    display: inline-block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-}
-
-/* BADGES */
-.badge {
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.easy {
-    background: #4CAF50;
-    color: white;
-}
-
-.medium {
-    background: #FFC107;
-    color: black;
-}
-
-.hard {
-    background: #F44336;
-    color: white;
-}
-
-/* GLOW EFFECT */
-.container {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
-}
-
-.result-box {
-    transition: 0.3s;
-}
-
-.result-box:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-/* LIST STYLE */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    background: rgba(255,255,255,0.1);
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: left;
-}
-
-/* GRID LAYOUT */
-.grid-container {
+/* ===== FILE UPLOAD SECTION ===== */
+.file-upload {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-/* EACH BOX */
-.category-box {
-    width: 300px;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+.custom-file {
+    background: white;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.category-box:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
+.custom-file input {
+    display: none;
 }
 
-.easy:hover { background: green; }
-.medium:hover { background: yellow; }
-.hard:hover { background: red; }
+#fileName {
+     color: #ff4d4d; /* default = no file */
+    font-size: 14px;
+    font-weight: 500;
+}
 
-/* HEADINGS */
-.category-box h2 {
-    text-align: center;
-    margin-bottom: 15px;
+.card h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 1px;
 }

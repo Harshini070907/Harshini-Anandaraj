@@ -2,25 +2,61 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
 
-<div class="container">
-    <h1>Question Evaluator</h1>
+<body>
 
-    <form method="POST" enctype="multipart/form-data">
+<div class="main-container">
+    <div class="card">
 
-    <h3>Upload File</h3>
-    <input type="file" name="file">
+        <h1>Question Evaluator</h1>
 
-    <p style="margin: 10px;">OR</p>
+        <form method="POST" enctype="multipart/form-data">
 
-    <h3>Type Questions</h3>
-    <textarea name="question" rows="5" placeholder="Enter multiple questions..."></textarea>
+            <!-- FILE UPLOAD -->
+            <div class="section">
+                <h3>Upload File</h3>
 
-    <br><br>
-    <button type="submit">Evaluate</button>
+                <div class="file-upload">
+                    <label class="custom-file">
+                        Choose File
+                        <input type="file" name="file" id="fileInput">
+                    </label>
 
-</form>
+                    <p id="fileName">No file chosen</p>
+                </div>
+            </div>
+
+            <p class="divider">OR</p>
+
+            <!-- TEXT INPUT -->
+            <div class="section">
+                <h3>Type Questions</h3>
+                <textarea name="question" rows="5" placeholder="Enter multiple questions..."></textarea>
+            </div>
+
+            <button type="submit">Evaluate</button>
+
+        </form>
+
+    </div>
 </div>
 
+<!-- JAVASCRIPT -->
+<script>
+const fileInput = document.getElementById("fileInput");
+const fileNameText = document.getElementById("fileName");
+
+fileInput.addEventListener("change", function() {
+    if (this.files.length > 0) {
+        fileNameText.textContent = this.files[0].name;
+        fileNameText.style.color = "limegreen"; // 🟢 file selected
+    } else {
+        fileNameText.textContent = "No file chosen";
+        fileNameText.style.color = "red"; // 🔴 no file
+    }
+});
+</script>
 </body>
 </html>
